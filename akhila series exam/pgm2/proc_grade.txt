@@ -1,0 +1,15 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_grade`(sid int ,sname varchar(20) ,course varchar(20), score int)
+BEGIN
+if(score>=990 and score<=1500)
+then
+insert into student values(sid,sname,course,score,"distinction");
+end if;
+if(score>=900 and score<=989)
+then
+insert into student values(sid,sname,course,score,"first class");
+end if;
+if(score>=825 and score<=899)
+then
+insert into student values(sid,sname,course,score,"second class");
+end if;
+END
